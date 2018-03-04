@@ -2,15 +2,15 @@
 % Please edit documentation in R/KScorrect.R
 \docType{package}
 \name{KScorrect-package}
-\alias{KScorrect}
 \alias{KScorrect-package}
-\title{KScorrect: Lilliefors-Corrected Kolmogorov-Smirnoff Goodness-of-Fit Tests}
+\alias{KScorrect}
+\title{KScorrect: Lilliefors-Corrected Kolmogorov-Smirnov Goodness-of-Fit Tests}
 \description{
-Implements the Lilliefors-corrected Kolmogorov-Smirnoff test for use in
+Implements the Lilliefors-corrected Kolmogorov-Smirnov test for use in
 goodness-of-fit tests.
 }
 \details{
-KScorrect implements the Lilliefors-corrected Kolmogorov-Smirnoff test for
+KScorrect implements the Lilliefors-corrected Kolmogorov-Smirnov test for
 use in goodness-of-fit tests, suitable when population parameters are unknown
 and must be estimated by sample statistics. \emph{P}-values are estimated by
 simulation. Coded to complement \code{\link[stats]{ks.test}}, it can be used
@@ -47,4 +47,3 @@ Phil Novack-Gottshall \email{pnovack-gottshall@ben.edu}
 
 Steve C. Wang \email{scwang@swarthmore.edu}
 }
-
