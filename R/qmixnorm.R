@@ -26,7 +26,7 @@ qmixnorm <- function (p, mean, sd, pro, expand=1) {
     stop("the lengths of supplied parameters do not make sense.")
   pro <- as.vector(pro, mode = "numeric")
   pro <- pro / sum(pro)
-  nr <- 10000
+  nr <- 1000
   x <- rmixnorm(nr * G, mean = mean, sd = sd, pro = pro)
   if (mode(expand) != "numeric" | expand < 0L)
     stop("'expand' must be a non-negative number.")
@@ -37,7 +37,7 @@ qmixnorm <- function (p, mean, sd, pro, expand=1) {
   for (g in seq.int(G)) {
     cdf <- cdf + pro[g] * pnorm(span, mean[g], sd[g])
   }
-  quants <- stats::spline(cdf, span, method = "fmm", xout = p)$y
+  quants <- stats::spline(cdf, span, method = "hyman", xout = p)$y
   quants[which(p < 0L | p > 1L)] <- NaN
   quants[which(p == 0L)] <- -Inf
   quants[which(p == 1L)] <- Inf
